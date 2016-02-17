@@ -1,13 +1,20 @@
 \input{setup/myPreamble}
 \begin{document}
+\thispagestyle{empty}
+\pagenumbering{gobble}
+\clearpage
+%\input{sections/myTitelblad}
 \tableofcontents %Indsætter indholdsfortegnelsen
-
-\setcounter{page}{1}
+\thispagestyle{empty}
+\pagenumbering{arabic}
+%\input{sections/myTitelblad}
 \input{sections/myKapitel}
+%\setcounter{page}{1}
 %\input{forord.tex}
 
 %\input{kapitel 1} eller noget i den dur
 \includegraphics[scale=0.1]{figures/Thomas}
 
 \printbibliography %Indsætter kildeliste
+\input{sections/myIndholdsfortegnelse}
 \end{document}
