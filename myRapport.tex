@@ -7,18 +7,19 @@
 \tableofcontents %Indsætter indholdsfortegnelsen
 \thispagestyle{empty}
 \pagenumbering{arabic} %Sætter sidetallet til 1
-%\input{sections/myKapitel}
+\input{sections/myKapitel}
 \input{sections/HvaderetMMO}
 \input{sections/HvorMassiveerMassive}
-%\input{sections/Udviklingsmetoder}
-%\input{sections/Problemstilling}
-%\input{sections/VedligeholdeIEtMMO}
-%\setcounter{page}{1}
+%\input{sections/myUdviklingsmetoder}
+\input{sections/Problemstilling}
+\input{sections/VedligeholdeIEtMMO}
 %\input{forord.tex}
 
 %\input{kapitel 1} eller noget i den dur
-%\includegraphics[scale=40.1]{figures/diagram}
-
+%\includegraphics[scale=0.1]{figures/diagram}
+\thispagestyle{empty}
+%\pagenumbering{gobble} %Springer sidetallet over
 \printbibliography %Indsætter kildeliste
 \input{sections/myIndholdsfortegnelse}
+
 \end{document}
