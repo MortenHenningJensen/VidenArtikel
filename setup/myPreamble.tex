@@ -6,9 +6,6 @@
 %\usepackage[backend = bibtex]{biblatex}
 %\addbibresource{myBilag.bib} %Bilags filen
 
-
-\usepackage{tabularx}
-
 %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Language, Encoding and Fonts
@@ -46,7 +43,8 @@
 %\definecolor{aaublue}{RGB}{33,26,82}% dark blue
 % The standard graphics inclusion package
 \usepackage{graphicx}
-
+\usepackage{placeins}
+\usepackage{tabularx}
 \usepackage{epstopdf}
 \epstopdfsetup{outdir=./}
 
@@ -105,12 +103,13 @@
 
 % Change the headers and footers
 \usepackage{fancyhdr}
+\usepackage{float}
 \pagestyle{fancy}
 \fancyhf{} %delete everything
 \renewcommand{\headrulewidth}{0pt} %remove the horizontal line in the header
-\fancyhead[RE]{\small\nouppercase\leftmark} %even page - chapter title
-\fancyhead[LO]{\small\nouppercase\rightmark} %uneven page - section title
-\fancyhead[LE,RO]{\thepage} %page number on all pages
+%\fancyhead[RE]{\small\nouppercase\leftmark} %even page - chapter title
+%\fancyhead[LO]{\small\nouppercase\rightmark} %uneven page - section title
+%\fancyhead[LE,RO]{\thepage} %page number on all pages
 % Do not stretch the content of a page. Instead,
 % insert white space at the bottom of the page
 \raggedbottom
