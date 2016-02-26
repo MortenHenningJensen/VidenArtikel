@@ -1,26 +1,45 @@
 \input{setup/myPreamble}
 \begin{document}
-\thispagestyle{empty}
-\pagenumbering{gobble} %Springer sidetallet over
-\clearpage
+\newcounter{totalp}
+\pagenumbering{gobble}
 \input{sections/myTitelblad}
 \tableofcontents %Indsætter indholdsfortegnelsen
 
-\thispagestyle{empty}
+\clearpage
 \pagenumbering{arabic} %Sætter sidetallet til 1
-\input{sections/HvaderetMMO}
+\setcounter{page}{1}
 
+\pagestyle{fancyplain}
+\lhead{\thepage}
+\rhead{\leftmark}
+
+\input{sections/HvaderetMMO}
 \input{sections/HvorMassiveerMassive}
-\input{sections/myKapitel}
-%\input{sections/myUdviklingsmetoder}
+\input{sections/myKapitel} %Er Udviklingsmetode-afsnittet
 \input{sections/Problemstilling}
 \input{sections/VedligeholdeIEtMMO}
 \input{sections/Konklusion}
 
-%\includegraphics[scale=0.1]{figures/diagram}
-\thispagestyle{empty}
-%\pagenumbering{gobble} %Springer sidetallet over
-\printbibliography %Indsætter kildeliste
+\label{lastreportpage}
+
+\appendix
+\printbibliography[heading = bibintoc] %Indsætter kildeliste
+\newcounter{appendixstart}
 \input{sections/myIndholdsfortegnelse}
+
+% USED FOR COUNTING THE NUMBER OF PAGES
+\newpage
+Empty page used for counting...
+%\addtocounter{page}{-\value{appendixstart}}
+\addtocounter{page}{-\value{appendixstart}}
+\addtocounter{page}{-11}{} %-1 fordi den trækker den ekstra side fra og -10 for de sider der er i reporten.
+\label{lastappendixpage}
+\newpage
+Empty page used for counting...
+%\addtocounter{page}{10}{}
+\addtocounter{page}{\value{totalp}}
+\addtocounter{page}{+9}{} %+11 for at komme op på det normale sidetal og -2, for de ekstra sider der er lavet.
+\label{totalpages}
+\mbox{}
 
 \end{document}
